@@ -3,29 +3,67 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3D80E00BF6DCBB471C924EC /* Pods_Skillbox_mod14_fix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0C01552753CA1DA3E55D40 /* Pods_Skillbox_mod14_fix.framework */; };
+		EE3696EB25C80A4E0042C6F5 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3696EA25C80A4E0042C6F5 /* WeatherViewController.swift */; };
+		EE3696F025C80E730042C6F5 /* WeatherAlamofireCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3696EF25C80E730042C6F5 /* WeatherAlamofireCell.swift */; };
+		EE3696FB25C80FB60042C6F5 /* WeathersAlamofireLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3696FA25C80FB60042C6F5 /* WeathersAlamofireLoader.swift */; };
+		EE36970625C810800042C6F5 /* WeatherParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36970525C810800042C6F5 /* WeatherParse.swift */; };
+		EE36970D25C8117F0042C6F5 /* WeatherGroupAlamofireCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36970C25C8117F0042C6F5 /* WeatherGroupAlamofireCell.swift */; };
+		EE36971025C832AD0042C6F5 /* WeatherThreeHoursModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36970F25C832AD0042C6F5 /* WeatherThreeHoursModel.swift */; };
+		EE36971325C8339E0042C6F5 /* WeatherDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36971225C8339E0042C6F5 /* WeatherDayModel.swift */; };
+		EE3C037525C574D900CD36A7 /* TaskCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C037425C574D900CD36A7 /* TaskCDViewController.swift */; };
+		EE3C037825C574F900CD36A7 /* CoreDataEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C037725C574F900CD36A7 /* CoreDataEditViewController.swift */; };
+		EE3C037F25C5763400CD36A7 /* ToDoCellCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C037E25C5763400CD36A7 /* ToDoCellCD.swift */; };
 		EE83F86125C1B02A00BC4034 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F86025C1B02A00BC4034 /* AppDelegate.swift */; };
 		EE83F86325C1B02A00BC4034 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F86225C1B02A00BC4034 /* SceneDelegate.swift */; };
-		EE83F86525C1B02A00BC4034 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F86425C1B02A00BC4034 /* ViewController.swift */; };
+		EE83F86525C1B02A00BC4034 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F86425C1B02A00BC4034 /* CoreDataViewController.swift */; };
 		EE83F86825C1B02A00BC4034 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE83F86625C1B02A00BC4034 /* Main.storyboard */; };
 		EE83F86B25C1B02A00BC4034 /* Skillbox_mod14_fix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE83F86925C1B02A00BC4034 /* Skillbox_mod14_fix.xcdatamodeld */; };
 		EE83F86D25C1B02B00BC4034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE83F86C25C1B02B00BC4034 /* Assets.xcassets */; };
 		EE83F87025C1B02B00BC4034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE83F86E25C1B02B00BC4034 /* LaunchScreen.storyboard */; };
+		EE83F88525C20DE600BC4034 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F88425C20DE600BC4034 /* TaskViewController.swift */; };
+		EE83F88825C20E6900BC4034 /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F88725C20E6900BC4034 /* RealmViewController.swift */; };
+		EE83F88C25C20EB800BC4034 /* RealmEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F88B25C20EB800BC4034 /* RealmEditViewController.swift */; };
+		EE83F88F25C20F1A00BC4034 /* UDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F88E25C20F1A00BC4034 /* UDViewController.swift */; };
+		EE83F89925C4060600BC4034 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F89825C4060600BC4034 /* ToDoModel.swift */; };
+		EE83F89E25C4080B00BC4034 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F89D25C4080B00BC4034 /* ToDoCell.swift */; };
+		EE83F8A325C4492200BC4034 /* ToDoModelCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE83F8A125C4492200BC4034 /* ToDoModelCD.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D6077766DBFC99EF2DFEE03 /* Pods-Skillbox_mod14_fix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skillbox_mod14_fix.debug.xcconfig"; path = "Target Support Files/Pods-Skillbox_mod14_fix/Pods-Skillbox_mod14_fix.debug.xcconfig"; sourceTree = "<group>"; };
+		9E27C8284F4CF1566F3E6645 /* Pods-Skillbox_mod14_fix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skillbox_mod14_fix.release.xcconfig"; path = "Target Support Files/Pods-Skillbox_mod14_fix/Pods-Skillbox_mod14_fix.release.xcconfig"; sourceTree = "<group>"; };
+		CE0C01552753CA1DA3E55D40 /* Pods_Skillbox_mod14_fix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skillbox_mod14_fix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE3696EA25C80A4E0042C6F5 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		EE3696EF25C80E730042C6F5 /* WeatherAlamofireCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAlamofireCell.swift; sourceTree = "<group>"; };
+		EE3696FA25C80FB60042C6F5 /* WeathersAlamofireLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersAlamofireLoader.swift; sourceTree = "<group>"; };
+		EE36970525C810800042C6F5 /* WeatherParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherParse.swift; sourceTree = "<group>"; };
+		EE36970C25C8117F0042C6F5 /* WeatherGroupAlamofireCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherGroupAlamofireCell.swift; sourceTree = "<group>"; };
+		EE36970F25C832AD0042C6F5 /* WeatherThreeHoursModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherThreeHoursModel.swift; sourceTree = "<group>"; };
+		EE36971225C8339E0042C6F5 /* WeatherDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDayModel.swift; sourceTree = "<group>"; };
+		EE3C037425C574D900CD36A7 /* TaskCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCDViewController.swift; sourceTree = "<group>"; };
+		EE3C037725C574F900CD36A7 /* CoreDataEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEditViewController.swift; sourceTree = "<group>"; };
+		EE3C037E25C5763400CD36A7 /* ToDoCellCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCellCD.swift; sourceTree = "<group>"; };
 		EE83F85D25C1B02A00BC4034 /* Skillbox_mod14_fix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skillbox_mod14_fix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE83F86025C1B02A00BC4034 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE83F86225C1B02A00BC4034 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE83F86425C1B02A00BC4034 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE83F86425C1B02A00BC4034 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		EE83F86725C1B02A00BC4034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE83F86A25C1B02A00BC4034 /* Skillbox_mod14_fix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skillbox_mod14_fix.xcdatamodel; sourceTree = "<group>"; };
 		EE83F86C25C1B02B00BC4034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE83F86F25C1B02B00BC4034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE83F87125C1B02B00BC4034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE83F88425C20DE600BC4034 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		EE83F88725C20E6900BC4034 /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
+		EE83F88B25C20EB800BC4034 /* RealmEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEditViewController.swift; sourceTree = "<group>"; };
+		EE83F88E25C20F1A00BC4034 /* UDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDViewController.swift; sourceTree = "<group>"; };
+		EE83F89825C4060600BC4034 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
+		EE83F89D25C4080B00BC4034 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		EE83F8A225C4492200BC4034 /* ToDoModelCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoModelCD.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +71,79 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D80E00BF6DCBB471C924EC /* Pods_Skillbox_mod14_fix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4317B5A92C601C6D743822D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D6077766DBFC99EF2DFEE03 /* Pods-Skillbox_mod14_fix.debug.xcconfig */,
+				9E27C8284F4CF1566F3E6645 /* Pods-Skillbox_mod14_fix.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5A1D76C32B689A702E764381 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE0C01552753CA1DA3E55D40 /* Pods_Skillbox_mod14_fix.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE3696E925C80A0E0042C6F5 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				EE3696EA25C80A4E0042C6F5 /* WeatherViewController.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		EE3696EE25C80E620042C6F5 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				EE3696EF25C80E730042C6F5 /* WeatherAlamofireCell.swift */,
+				EE36970C25C8117F0042C6F5 /* WeatherGroupAlamofireCell.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		EE3696F225C80F150042C6F5 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				EE36970F25C832AD0042C6F5 /* WeatherThreeHoursModel.swift */,
+				EE36971225C8339E0042C6F5 /* WeatherDayModel.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		EE3696F925C80FA70042C6F5 /* Loaders */ = {
+			isa = PBXGroup;
+			children = (
+				EE3696FA25C80FB60042C6F5 /* WeathersAlamofireLoader.swift */,
+			);
+			path = Loaders;
+			sourceTree = "<group>";
+		};
+		EE36970425C810620042C6F5 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				EE36970525C810800042C6F5 /* WeatherParse.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
 		EE83F85425C1B02A00BC4034 = {
 			isa = PBXGroup;
 			children = (
 				EE83F85F25C1B02A00BC4034 /* Skillbox_mod14_fix */,
 				EE83F85E25C1B02A00BC4034 /* Products */,
+				4317B5A92C601C6D743822D9 /* Pods */,
+				5A1D76C32B689A702E764381 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +158,127 @@
 		EE83F85F25C1B02A00BC4034 /* Skillbox_mod14_fix */ = {
 			isa = PBXGroup;
 			children = (
-				EE83F86025C1B02A00BC4034 /* AppDelegate.swift */,
-				EE83F86225C1B02A00BC4034 /* SceneDelegate.swift */,
-				EE83F86425C1B02A00BC4034 /* ViewController.swift */,
-				EE83F86625C1B02A00BC4034 /* Main.storyboard */,
+				EE36970425C810620042C6F5 /* Parsers */,
+				EE3696F925C80FA70042C6F5 /* Loaders */,
+				EE83F87C25C1B08100BC4034 /* Controllers */,
+				EE83F87B25C1B06D00BC4034 /* Storyboards */,
+				EE83F87A25C1B05F00BC4034 /* Delegates */,
+				EE83F87925C1B05500BC4034 /* Models */,
+				EE83F87825C1B04D00BC4034 /* Views */,
 				EE83F86C25C1B02B00BC4034 /* Assets.xcassets */,
-				EE83F86E25C1B02B00BC4034 /* LaunchScreen.storyboard */,
 				EE83F87125C1B02B00BC4034 /* Info.plist */,
 				EE83F86925C1B02A00BC4034 /* Skillbox_mod14_fix.xcdatamodeld */,
 			);
 			path = Skillbox_mod14_fix;
+			sourceTree = "<group>";
+		};
+		EE83F87825C1B04D00BC4034 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE3696EE25C80E620042C6F5 /* Weather */,
+				EE83F89C25C407C700BC4034 /* CoreData */,
+				EE83F89B25C407B900BC4034 /* Realm */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EE83F87925C1B05500BC4034 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE3696F225C80F150042C6F5 /* Weather */,
+				EE83F88125C1B40100BC4034 /* CoreData */,
+				EE83F88025C1B3FB00BC4034 /* Realm */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE83F87A25C1B05F00BC4034 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				EE83F86025C1B02A00BC4034 /* AppDelegate.swift */,
+				EE83F86225C1B02A00BC4034 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		EE83F87B25C1B06D00BC4034 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EE83F86625C1B02A00BC4034 /* Main.storyboard */,
+				EE83F86E25C1B02B00BC4034 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EE83F87C25C1B08100BC4034 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE3696E925C80A0E0042C6F5 /* Weather */,
+				EE83F87F25C1B3E900BC4034 /* CoreData */,
+				EE83F87E25C1B3E200BC4034 /* Realm */,
+				EE83F87D25C1B3CE00BC4034 /* UserDefaults */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EE83F87D25C1B3CE00BC4034 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				EE83F88E25C20F1A00BC4034 /* UDViewController.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		EE83F87E25C1B3E200BC4034 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				EE83F88425C20DE600BC4034 /* TaskViewController.swift */,
+				EE83F88725C20E6900BC4034 /* RealmViewController.swift */,
+				EE83F88B25C20EB800BC4034 /* RealmEditViewController.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		EE83F87F25C1B3E900BC4034 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EE83F86425C1B02A00BC4034 /* CoreDataViewController.swift */,
+				EE3C037425C574D900CD36A7 /* TaskCDViewController.swift */,
+				EE3C037725C574F900CD36A7 /* CoreDataEditViewController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EE83F88025C1B3FB00BC4034 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				EE83F89825C4060600BC4034 /* ToDoModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		EE83F88125C1B40100BC4034 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EE83F8A125C4492200BC4034 /* ToDoModelCD.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EE83F89B25C407B900BC4034 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				EE83F89D25C4080B00BC4034 /* ToDoCell.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		EE83F89C25C407C700BC4034 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EE3C037E25C5763400CD36A7 /* ToDoCellCD.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE83F87425C1B02B00BC4034 /* Build configuration list for PBXNativeTarget "Skillbox_mod14_fix" */;
 			buildPhases = (
+				2D8E545A38C1392A604A43CE /* [CP] Check Pods Manifest.lock */,
 				EE83F85925C1B02A00BC4034 /* Sources */,
 				EE83F85A25C1B02A00BC4034 /* Frameworks */,
 				EE83F85B25C1B02A00BC4034 /* Resources */,
+				B2D28B9BB1624F4A10FC1B56 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,15 +348,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D8E545A38C1392A604A43CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Skillbox_mod14_fix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2D28B9BB1624F4A10FC1B56 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Skillbox_mod14_fix/Pods-Skillbox_mod14_fix-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Skillbox_mod14_fix/Pods-Skillbox_mod14_fix-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Skillbox_mod14_fix/Pods-Skillbox_mod14_fix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EE83F85925C1B02A00BC4034 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE83F86525C1B02A00BC4034 /* ViewController.swift in Sources */,
+				EE36970625C810800042C6F5 /* WeatherParse.swift in Sources */,
+				EE83F88825C20E6900BC4034 /* RealmViewController.swift in Sources */,
+				EE3696EB25C80A4E0042C6F5 /* WeatherViewController.swift in Sources */,
+				EE83F88F25C20F1A00BC4034 /* UDViewController.swift in Sources */,
+				EE3C037F25C5763400CD36A7 /* ToDoCellCD.swift in Sources */,
+				EE3C037525C574D900CD36A7 /* TaskCDViewController.swift in Sources */,
+				EE3696F025C80E730042C6F5 /* WeatherAlamofireCell.swift in Sources */,
+				EE36971025C832AD0042C6F5 /* WeatherThreeHoursModel.swift in Sources */,
+				EE83F88C25C20EB800BC4034 /* RealmEditViewController.swift in Sources */,
+				EE83F86525C1B02A00BC4034 /* CoreDataViewController.swift in Sources */,
 				EE83F86B25C1B02A00BC4034 /* Skillbox_mod14_fix.xcdatamodeld in Sources */,
+				EE83F8A325C4492200BC4034 /* ToDoModelCD.xcdatamodeld in Sources */,
+				EE83F88525C20DE600BC4034 /* TaskViewController.swift in Sources */,
+				EE36971325C8339E0042C6F5 /* WeatherDayModel.swift in Sources */,
+				EE3C037825C574F900CD36A7 /* CoreDataEditViewController.swift in Sources */,
 				EE83F86125C1B02A00BC4034 /* AppDelegate.swift in Sources */,
+				EE36970D25C8117F0042C6F5 /* WeatherGroupAlamofireCell.swift in Sources */,
 				EE83F86325C1B02A00BC4034 /* SceneDelegate.swift in Sources */,
+				EE83F89925C4060600BC4034 /* ToDoModel.swift in Sources */,
+				EE3696FB25C80FB60042C6F5 /* WeathersAlamofireLoader.swift in Sources */,
+				EE83F89E25C4080B00BC4034 /* ToDoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +559,7 @@
 		};
 		EE83F87525C1B02B00BC4034 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D6077766DBFC99EF2DFEE03 /* Pods-Skillbox_mod14_fix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -305,6 +578,7 @@
 		};
 		EE83F87625C1B02B00BC4034 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E27C8284F4CF1566F3E6645 /* Pods-Skillbox_mod14_fix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -352,6 +626,16 @@
 			);
 			currentVersion = EE83F86A25C1B02A00BC4034 /* Skillbox_mod14_fix.xcdatamodel */;
 			path = Skillbox_mod14_fix.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		EE83F8A125C4492200BC4034 /* ToDoModelCD.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EE83F8A225C4492200BC4034 /* ToDoModelCD.xcdatamodel */,
+			);
+			currentVersion = EE83F8A225C4492200BC4034 /* ToDoModelCD.xcdatamodel */;
+			path = ToDoModelCD.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
