@@ -123,7 +123,7 @@ class WeatherViewController: UIViewController {
             self.weatherDay = WeatherDayModel.shared
             
             // И пустую модель запишем в базу используя RealmHandler
-            RealmHandler.shared.saveModel(self.weatherDay!, data: nil)
+            RealmHandler.shared.saveModel(self.weatherDay!, data: nil, isInsert: true)
         }
         
         // Попытаемся получить данные о погодо по часам и дням из базы
