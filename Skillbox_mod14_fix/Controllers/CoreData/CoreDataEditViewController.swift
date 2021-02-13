@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 // Опишем обратные функции для вызова в головном окне
 protocol CDEditViewControllerDelegate {
@@ -14,10 +13,7 @@ protocol CDEditViewControllerDelegate {
     func tableReload()
 }
 
-class CoreDataEditViewController: UIViewController {
-    // Получим контекст объекта
-    static let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let context = appDelegate.persistentContainer.viewContext
+class CoreDataEditViewController: UIViewController, UITextFieldDelegate {
     
     // Объект для редактирования - или nil (новая задача) или объект типа ToDoModelCD
     var editedTask : Any?
@@ -38,6 +34,10 @@ class CoreDataEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Укажем, что делегат для поля eventDateTextField
+        // является наш контроллер - чтобы отключить ввод текста
+        eventDateTextField.delegate = self
 
         // Установить формат даты и времени
         dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
@@ -97,6 +97,15 @@ class CoreDataEditViewController: UIViewController {
         }
     }
     
+    // Функция, предотвращающая ввод данных в поле eventDateTextField
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //For mobile numer validation
+        if textField == eventDateTextField {
+            return false
+        }
+        return true
+    }
+    
     // Обработаем событие начала редактирования поля дата события
     @IBAction func eventDateDidBeginEditing(_ sender: Any) {
         // если поле не пустое, то попытаемся передать в селектор даты и времени его значение
@@ -129,45 +138,25 @@ class CoreDataEditViewController: UIViewController {
     
     // Обработаем событие нажатия на кнопку Записать
     @IBAction func saveButton(_ sender: Any) {
+        // Объявим словарь, для заполнения его данными полей ввода
+        // ключи в словаре у нас будут текстовые, а значения любого типа
+        var fields: [Dictionary<String, Any>] = []
+        
+        // Заполним поля нового объекта значениями из полей ввода
+        fields.append(["title": titleTextField.text!])
+        fields.append(["eventDate": ("" != eventDateTextField.text) ? dateFormatter.date(from: eventDateTextField.text!)! as Date : Date()])
+        fields.append(["isCompleted": isCompletedSwitch.isOn])
+        fields.append(["notes": notesTextView.text!])
+        
         // Если у нас редактирование задачи...
         if let editObj = editedTask as? ToDoModelCD {
-            // ... заполним поля нашей модели значениями их полей ввода
-            do {
-                editObj.title = titleTextField.text!
-                
-                if "" != eventDateTextField.text {
-                    editObj.eventDate = dateFormatter.date(from: eventDateTextField.text!)! as Date
-                } else {
-                    editObj.eventDate = Date()
-                }
-                editObj.isCompleted = isCompletedSwitch.isOn
-                editObj.notes = notesTextView.text!
-    
-                // Сохраним контекст с изменениями
-                try context.save()
-            } catch let error as NSError {
-                // в случае ошибки, выведем ее на консоль
-                print("Could not Update. \(error), \(error.userInfo)")
-            }
+            CoreDataHandler.shared.updateModel(editObj, data: fields)
         } else {
-            // Если у нас добавление новой задачи, создадим новый объект в контексте
-            let entity = NSEntityDescription.entity(forEntityName: "ToDoModelCD", in: context)
-            let newToDo = NSManagedObject(entity: entity!, insertInto: context)
+            // Для новой задачи задаим так же дату ее создания
+            fields.append(["date": NSDate()])
             
-            // Заполним поля нового объекта значениями из полей ввода
-            newToDo.setValue(titleTextField.text!, forKey: "title")
-            
-            if "" != eventDateTextField.text {
-                newToDo.setValue(dateFormatter.date(from: eventDateTextField.text!)! as Date, forKey: "eventDate")
-            } else {
-                newToDo.setValue(Date(), forKey: "eventDate")
-            }
-            newToDo.setValue(isCompletedSwitch.isOn, forKey: "isCompleted")
-            newToDo.setValue(notesTextView.text!, forKey: "notes")
-            newToDo.setValue(NSDate(), forKey: "date")
-            
-            // Запишем контекст с изменениями
-            CoreDataEditViewController.appDelegate.saveContext()
+            // И создадим запись в базе даннх
+            CoreDataHandler.shared.createModel("ToDoModelCD", data: fields)
         }
         
         // У основного окна загрузим заново данные из базы

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class RealmViewController: UIViewController, RealmEditViewControllerDelegate {
     // Инициируем массив моделей задач
@@ -31,14 +30,7 @@ class RealmViewController: UIViewController, RealmEditViewControllerDelegate {
 
     // загружаем данные из Realm в наш data source
     func loadUsersData() {
-        let realmInstance = try! Realm()
-        var toDoList = [ToDoModel]()
-        
-        // ...установим сортировку по дате наступления события
-        for task in realmInstance.objects(ToDoModel.self).sorted(byKeyPath: "eventDate", ascending: true) {
-            toDoList.append(task)
-        }
-        self.toDoList = toDoList
+        self.toDoList = RealmHandler.shared.fetchAll(ofType: ToDoModel.self, sorted: [SortedParams(field: "eventDate", asc: false)])
     }
 
     // функция удаления записи из таблицы базы данных и в таблице TableView

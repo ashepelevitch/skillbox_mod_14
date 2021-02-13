@@ -6,14 +6,10 @@
 //
 
 import UIKit
-import CoreData
 
 class CoreDataViewController: UIViewController, CDEditViewControllerDelegate {
     // Инициируем массив моделей задач
-    var toDoList = [ToDoModelCD]()
-    // Получим контекст объекта
-    static let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let context = appDelegate.persistentContainer.viewContext
+    var toDoList = [ToDoModelCD]()    
 
     // Создадим связку с таблицей
     @IBOutlet weak var tableView: UITableView!
@@ -27,45 +23,16 @@ class CoreDataViewController: UIViewController, CDEditViewControllerDelegate {
     }
 
     func loadUsersData() {        
-        // Создадим запрос на получение данных из таблицы
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ToDoModelCD")
-        // У нас простая таблица, без связей, по этому будем загружать сразу, не используя "ленивую загрузку" данных
-        request.returnsObjectsAsFaults = false
-        // ...установим сортировку по дате наступления события
-        request.sortDescriptors = [NSSortDescriptor(key: "eventDate", ascending: true)]
-        // Обработаем запрос, учитывая возможные ошибки при получении данных
-        do {
-            let result = try context.fetch(request)
-            var toDoList = [ToDoModelCD]()
-            
-            // пройдемся по списку полученных данных...
-            for task in result as! [ToDoModelCD] {
-                // ...и добавим их в локальный массив
-                toDoList.append(task)
-            }
-            // Теперь присвоим полученный массива задач основному массиву класса
-            self.toDoList = toDoList
-        } catch let error {
-            // Если в случае обработки произошла ошибка - выведем ее в консоль
-            print("Error: \(error)")
-        }
-        
+        self.toDoList = CoreDataHandler.shared.fetchAll(ofType: ToDoModelCD.self, sorted: [SortedParams(field: "eventDate", asc: false)])
     }
     
     // функция удаления записи из таблицы базы данных и в таблице TableView
     private func removeRow(n: Int) {
         // проверим, что в нашем массиве задач есть задача для удаления
         if self.toDoList[n] != nil {
-            do {
-                // Удалим запись из контекста базы данных
-                context.delete(self.toDoList[n] as NSManagedObject)
+            if (CoreDataHandler.shared.delete(obj: self.toDoList[n])) {
                 // и удалим запись из нашего массива задач
                 self.toDoList.remove(at: n)
-                // Запишем итоговый контекст с перехватом ошибки
-                try context.save()
-            } catch let error as NSError {
-                // Если произошла ошибка, отобразим ее в консоли
-                print("Could not Update. \(error), \(error.userInfo)")
             }
         }
     }

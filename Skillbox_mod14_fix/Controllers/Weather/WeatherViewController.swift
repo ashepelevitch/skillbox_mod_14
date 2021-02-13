@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 // установим основные конфигурационные константы
 let apiKey = "3a57d58eb787613e6e86839433da7faa"
@@ -49,8 +48,6 @@ class WeatherViewController: UIViewController {
     // объявим словарь для данных о погоде по часам и дням
     var weatherThreeHoursList: [WeatherGroups] = []
     
-    let realmInstance = try! Realm()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,7 +88,7 @@ class WeatherViewController: UIViewController {
             DispatchQueue.main.async {
                 if let list = jsonDict["list"] as? [NSDictionary] {
                     // очистим таблицу от старых записей
-                    self.deleteAll([WeatherThreeHoursModel.self])
+                    RealmHandler.shared.deleteAll([WeatherThreeHoursModel.self])
                     
                     // заполним таблицу полученными данными о погоде
                     var weatherNewList: [WeatherThreeHoursModel] = []
@@ -114,33 +111,25 @@ class WeatherViewController: UIViewController {
     }
     
     // загружаем данные из Realm в наш data source
+    // Будем использовать RealmHandler, отвечающий за работу с Realm
     func loadUsersData() {
         // Если запись о текущей погоде уже есть...
-        if let currentWeatherDay = realmInstance.objects(WeatherDayModel.self).sorted(byKeyPath: "date", ascending: false).first {
+        if let currentWeatherDay = RealmHandler.shared.fetchAll(ofType: WeatherDayModel.self, sorted: [SortedParams(field: "date", asc: true)]).first {
             // ...просто запишем ее в необходимую переменную
             self.weatherDay = currentWeatherDay
         } else {
             // Если записи о текущей погоде еще нет (первый запуск приложения)
             // Будем использовать Singleton
             self.weatherDay = WeatherDayModel.shared
-            do {
-                try realmInstance.write {
-                    // И пустой запишем его в базу
-                    realmInstance.add(self.weatherDay!)
-                }
-            } catch let error as NSError {
-                print(error)
-            }
+            
+            // И пустую модель запишем в базу используя RealmHandler
+            RealmHandler.shared.saveModel(self.weatherDay!, data: nil)
         }
         
         // Попытаемся получить данные о погодо по часам и дням из базы
-        // Инициируем пустой словарь данных
-        var weatherList: [WeatherThreeHoursModel] = []
+        // Запросим все записи из табдицы и установим сортировку по дате и времени прогноза
+        let weatherList = RealmHandler.shared.fetchAll(ofType: WeatherThreeHoursModel.self, sorted: [SortedParams(field: "date", asc: true), SortedParams(field: "time", asc: true)])
         
-        // Запросим все записи из табдицы и установим сортировку по дате наступления события
-        for task in realmInstance.objects(WeatherThreeHoursModel.self).sorted(byKeyPath: "date", ascending: true) {
-            weatherList.append(task)
-        }
         // Полученные из базы данных записи необходимо сгруппировать перед выводом в табдицу
         WeatherParse().parseToThreeHours(weatherList: weatherList) { weatherThreeHoursList in
             // плученные данные поместим в словарь для последущего вывода в таблице
@@ -161,18 +150,6 @@ class WeatherViewController: UIViewController {
             self.descriptLabel.text = wd.descript
             self.windSpeedLabel.text = wd.windSpeed
             self.humidityLabel.text = wd.humidity
-        }
-    }
-    
-    // Функция удаления всех записей в таблицах
-    func deleteAll<T: Object>(_ data: [T.Type]) {
-        realmInstance.refresh()
-
-        try? realmInstance.write {
-            for object in data {
-                let allObjects = realmInstance.objects(object)
-                realmInstance.delete(allObjects)
-            }
         }
     }
 }

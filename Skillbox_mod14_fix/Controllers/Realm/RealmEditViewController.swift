@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 // Опишем обратные функции для вызова в головном окне
 protocol RealmEditViewControllerDelegate {
@@ -14,7 +13,7 @@ protocol RealmEditViewControllerDelegate {
     func tableReload()
 }
 
-class RealmEditViewController: UIViewController {
+class RealmEditViewController: UIViewController, UITextFieldDelegate {
 
     // Модель для редактирования
     var editedTask : ToDoModel!
@@ -35,6 +34,10 @@ class RealmEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Укажем, что делегат для поля eventDateTextField
+        // является наш контроллер - чтобы отключить ввод текста
+        eventDateTextField.delegate = self
 
         // Установить формат даты и времени
         dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
@@ -93,6 +96,15 @@ class RealmEditViewController: UIViewController {
         }
     }
     
+    // Функция, предотвращающая ввод данных в поле eventDateTextField
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //For mobile numer validation
+        if textField == eventDateTextField {
+            return false
+        }
+        return true
+    }
+    
     // Обработаем событие начала редактирования поля дата события
     @IBAction func eventDateDidBeginEditing(_ sender: Any) {
         // если поле не пустое, то попытаемся передать в селектор даты и времени его значение
@@ -125,31 +137,28 @@ class RealmEditViewController: UIViewController {
     
     // Обработаем событие нажатия на кнопку Записать
     @IBAction func saveButton(_ sender: Any) {
-        // Свяжем работу с Realm
-        let realmInstance = try! Realm()
+        
         // проверим - создаем новую задачу или обновляем имеющуюся?
         let isInsert = ("" == editedTask.id)
         
-        try! realmInstance.write{
-            // если новая задача - зададим поле ID
-            if isInsert {
-                editedTask.id = UUID().uuidString
-            }
-            // Заполним поля в модели
-            editedTask.title = titleTextField.text!
-            if "" != eventDateTextField.text {
-                editedTask.eventDate = dateFormatter.date(from: eventDateTextField.text!)! as NSDate
-            } else {
-                editedTask.eventDate = NSDate()
-            }
-            editedTask.isCompleted = isCompletedSwitch.isOn
-            editedTask.notes = notesTextView.text!
-            
-            // Если вставка новой задачи - добавим модель в базу
-            if isInsert {
-                realmInstance.add(editedTask)
-            }
+        // Объявим словарь, для заполнения его данными полей ввода
+        // ключи в словаре у нас будут текстовые, а значения любого типа
+        var fields: [Dictionary<String, Any>] = []
+        
+        // если новая задача - зададим поле ID
+        if isInsert {
+            fields.append(["id": UUID().uuidString])
         }
+        
+        // Заполним поля для сохранения в модели
+        fields.append(["title": titleTextField.text!])
+        fields.append(["eventDate": ("" != eventDateTextField.text) ? dateFormatter.date(from: eventDateTextField.text!)! : NSDate()])
+        fields.append(["isCompleted": isCompletedSwitch.isOn])
+        fields.append(["notes": notesTextView.text!])
+            
+        // Сохраним данные в модели
+        RealmHandler.shared.saveModel(editedTask, data: fields, isInsert: isInsert)
+
         // У основного окна загрузим заново данные из базы
         delegate?.loadUsersData()
         // Перезагрузим таблицу

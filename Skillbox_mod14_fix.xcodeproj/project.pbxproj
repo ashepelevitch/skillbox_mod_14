@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D3D80E00BF6DCBB471C924EC /* Pods_Skillbox_mod14_fix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0C01552753CA1DA3E55D40 /* Pods_Skillbox_mod14_fix.framework */; };
+		EE0E0FE925D46E0C008CBE2E /* RealmHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E0FE825D46E0C008CBE2E /* RealmHandler.swift */; };
 		EE3696EB25C80A4E0042C6F5 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3696EA25C80A4E0042C6F5 /* WeatherViewController.swift */; };
 		EE3696F025C80E730042C6F5 /* WeatherAlamofireCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3696EF25C80E730042C6F5 /* WeatherAlamofireCell.swift */; };
 		EE3696FB25C80FB60042C6F5 /* WeathersAlamofireLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3696FA25C80FB60042C6F5 /* WeathersAlamofireLoader.swift */; };
@@ -32,12 +33,14 @@
 		EE83F89925C4060600BC4034 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F89825C4060600BC4034 /* ToDoModel.swift */; };
 		EE83F89E25C4080B00BC4034 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83F89D25C4080B00BC4034 /* ToDoCell.swift */; };
 		EE83F8A325C4492200BC4034 /* ToDoModelCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE83F8A125C4492200BC4034 /* ToDoModelCD.xcdatamodeld */; };
+		EEA6F01B25D7D43B007E68EB /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F01A25D7D43B007E68EB /* CoreDataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D6077766DBFC99EF2DFEE03 /* Pods-Skillbox_mod14_fix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skillbox_mod14_fix.debug.xcconfig"; path = "Target Support Files/Pods-Skillbox_mod14_fix/Pods-Skillbox_mod14_fix.debug.xcconfig"; sourceTree = "<group>"; };
 		9E27C8284F4CF1566F3E6645 /* Pods-Skillbox_mod14_fix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skillbox_mod14_fix.release.xcconfig"; path = "Target Support Files/Pods-Skillbox_mod14_fix/Pods-Skillbox_mod14_fix.release.xcconfig"; sourceTree = "<group>"; };
 		CE0C01552753CA1DA3E55D40 /* Pods_Skillbox_mod14_fix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skillbox_mod14_fix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE0E0FE825D46E0C008CBE2E /* RealmHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHandler.swift; sourceTree = "<group>"; };
 		EE3696EA25C80A4E0042C6F5 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		EE3696EF25C80E730042C6F5 /* WeatherAlamofireCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAlamofireCell.swift; sourceTree = "<group>"; };
 		EE3696FA25C80FB60042C6F5 /* WeathersAlamofireLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersAlamofireLoader.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		EE83F89825C4060600BC4034 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
 		EE83F89D25C4080B00BC4034 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		EE83F8A225C4492200BC4034 /* ToDoModelCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoModelCD.xcdatamodel; sourceTree = "<group>"; };
+		EEA6F01A25D7D43B007E68EB /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				EE83F89825C4060600BC4034 /* ToDoModel.swift */,
+				EE0E0FE825D46E0C008CBE2E /* RealmHandler.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				EE83F8A125C4492200BC4034 /* ToDoModelCD.xcdatamodeld */,
+				EEA6F01A25D7D43B007E68EB /* CoreDataHandler.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -397,6 +403,7 @@
 			files = (
 				EE36970625C810800042C6F5 /* WeatherParse.swift in Sources */,
 				EE83F88825C20E6900BC4034 /* RealmViewController.swift in Sources */,
+				EEA6F01B25D7D43B007E68EB /* CoreDataHandler.swift in Sources */,
 				EE3696EB25C80A4E0042C6F5 /* WeatherViewController.swift in Sources */,
 				EE83F88F25C20F1A00BC4034 /* UDViewController.swift in Sources */,
 				EE3C037F25C5763400CD36A7 /* ToDoCellCD.swift in Sources */,
@@ -413,6 +420,7 @@
 				EE83F86125C1B02A00BC4034 /* AppDelegate.swift in Sources */,
 				EE36970D25C8117F0042C6F5 /* WeatherGroupAlamofireCell.swift in Sources */,
 				EE83F86325C1B02A00BC4034 /* SceneDelegate.swift in Sources */,
+				EE0E0FE925D46E0C008CBE2E /* RealmHandler.swift in Sources */,
 				EE83F89925C4060600BC4034 /* ToDoModel.swift in Sources */,
 				EE3696FB25C80FB60042C6F5 /* WeathersAlamofireLoader.swift in Sources */,
 				EE83F89E25C4080B00BC4034 /* ToDoCell.swift in Sources */,
